@@ -19,11 +19,11 @@
 
 / {
     ibp_scrl: ibp_scrl_dummy {
-        compatible = "zmk,behavior-macro";
-        #binding-cells = <2>; // これで &ibp_scrl 1 1 との整合性が取れます
-        wait-ms = <0>;
-        tap-ms = <0>;
-        bindings = <&none>;
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <2>;
+        flavor = "tap-preferred";
+        tapping-term-ms = <0>;
+        bindings = <&none>, <&none>;
     };
 
     macros {
