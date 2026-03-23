@@ -19,8 +19,9 @@
 
 / {
     mouse_runtime_input_processor_central: mouse_runtime_input_processor_central {
-        compatible = "zmk,input-processor-runtime"; // これを追加
+        compatible = "zmk,input-processor-runtime";
         #input-processor-cells = <0>;
+        processor-label = "mouse";   /* これが必要でした */
         type = <INPUT_EV_REL>;
         x-codes = <INPUT_REL_X>;
         y-codes = <INPUT_REL_Y>;
