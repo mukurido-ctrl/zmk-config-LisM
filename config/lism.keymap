@@ -109,6 +109,7 @@
                 &trans           &trans             &trans                &trans                  &trans                                                 &trans       &trans           &trans             &trans              &trans
                 &trans           &trans             &trans                &trans                  &trans            &zip 0              &trans           &trans       &trans           &trans             &trans              &trans
             >;
+            sensor-bindings = <&rsr_scrl &rsr_scrl>;
         };
 
         layer_6 {
