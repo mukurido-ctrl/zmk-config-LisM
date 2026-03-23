@@ -6,7 +6,6 @@
 #include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/mouse.h>
 #include <behaviors/runtime-sensor-rotate.dtsi>
-#include <dt-bindings/zmk/input_processor.h>
 
 &mt {
     tapping-term-ms = <300>;
@@ -105,10 +104,10 @@
         layer_5 {
             display-name = "Scroll Layer";
             bindings = <
-                &trans           &trans             &trans                &trans                  &trans                                                 &trans       &trans           &trans             &trans              &zip SCRL_MODE
+                &trans           &trans             &trans                &trans                  &trans                                                 &trans       &trans           &trans             &trans              &zip 0
                 &trans           &trans             &trans                &trans                  &trans                                                 &trans       &trans           &trans             &trans              &trans
                 &trans           &trans             &trans                &trans                  &trans                                                 &trans       &trans           &trans             &trans              &trans
-                &trans           &trans             &trans                &trans                  &trans            &zip SCRL_MODE              &trans           &trans       &trans           &trans             &trans              &trans
+                &trans           &trans             &trans                &trans                  &trans            &zip 0              &trans           &trans       &trans           &trans             &trans              &trans
             >;
         };
 
