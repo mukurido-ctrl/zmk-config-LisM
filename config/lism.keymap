@@ -19,11 +19,12 @@
 
 / {
     mouse_runtime_input_processor_central: mouse_runtime_input_processor_central {
-        compatible = "zmk,behavior-hold-tap";
-        #binding-cells = <2>;
-        flavor = "tap-preferred";
-        tapping-term-ms = <0>;
-        bindings = <&none>, <&none>;
+        compatible = "zmk,input-processor-runtime";
+        #input-processor-cells = <0>;
+        processor-label = "mouse";
+        type = <INPUT_EV_REL>;
+        x-codes = <INPUT_REL_X>;
+        y-codes = <INPUT_REL_Y>;
     };
 
     macros {
