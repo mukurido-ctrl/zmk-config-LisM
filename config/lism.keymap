@@ -18,13 +18,9 @@
 
 
 / {
-    mouse_runtime_input_processor_central: mouse_runtime_input_processor_central {
-        compatible = "zmk,input-processor-runtime";
-        #input-processor-cells = <0>;
-        processor-label = "mouse";   /* これが必要でした */
-        type = <INPUT_EV_REL>;
-        x-codes = <INPUT_REL_X>;
-        y-codes = <INPUT_REL_Y>;
+    ibp_scrl: ibp_scrl_dummy {
+        compatible = "zmk,behavior-none";
+        #binding-cells = <2>;
     };
 
     macros {
@@ -52,14 +48,6 @@
             tap-ms = <20>;
             cw-binding = <&msc SCRL_DOWN>;
             ccw-binding = <&msc SCRL_UP>;
-        };
-
-    ibp_scrl: ibp_scrl {
-            compatible = "zmk,behavior-input-two-ints";
-            #binding-cells = <2>;
-            // マウスプロセッサが存在する場合のみ有効なラベルを指定
-            // Snippet側で定義されているはずのラベルを直接書きます
-            bindings = <&mouse_runtime_input_processor_central>;
         };
     };
 
