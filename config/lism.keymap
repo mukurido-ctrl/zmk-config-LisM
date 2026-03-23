@@ -18,14 +18,11 @@
 
 
 / {
-    mouse_runtime_input_processor_central: mouse_runtime_input_processor_central {
-        compatible = "zmk,input-processor-runtime";
-        #input-processor-cells = <0>;
-        #binding-cells = <2>;   /* これを追加！ */
-        processor-label = "mouse";
-        type = <INPUT_EV_REL>;
-        x-codes = <INPUT_REL_X>;
-        y-codes = <INPUT_REL_Y>;
+    ibp_scrl: ibp_scrl {
+        compatible = "zmk,behavior-input-two-ints";
+        #binding-cells = <2>;
+        // 左手ビルド用にダミーのターゲットを指定（存在しなくても良い形式）
+        bindings = <&none>;
     };
 
     macros {
@@ -114,10 +111,10 @@
         layer_5 {
             display-name = "Scroll Layer";
             bindings = <
-                &trans           &trans             &trans                &trans                  &trans                                                 &trans       &trans           &trans             &trans              &{/mouse_runtime_input_processor_central} 1 1
+                &trans           &trans             &trans                &trans                  &trans                                                 &trans       &trans           &trans             &trans              &ibp_scrl 1 1
                 &trans           &trans             &trans                &trans                  &trans                                                 &trans       &trans           &trans             &trans              &trans
                 &trans           &trans             &trans                &trans                  &trans                                                 &trans       &trans           &trans             &trans              &trans
-                &trans           &trans             &trans                &trans                  &trans            &{/mouse_runtime_input_processor_central} 1 1             &trans           &trans       &trans           &trans             &trans              &trans
+                &trans           &trans             &trans                &trans                  &trans            &ibp_scrl 1 1             &trans           &trans       &trans           &trans             &trans              &trans
             >;
             sensor-bindings = <&rsr_scrl &rsr_scrl>;
         };
@@ -145,4 +142,8 @@
         };
     };
 
+};
+
+&ibp_scrl {
+    bindings = <&mouse_runtime_input_processor_central>;
 };
