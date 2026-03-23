@@ -21,6 +21,9 @@
     mouse_runtime_input_processor_central: mouse_runtime_input_processor_central {
         compatible = "zmk,input-processor-runtime"; // これを追加
         #input-processor-cells = <0>;
+        type = <INPUT_EV_REL>;
+        x-codes = <INPUT_REL_X>;
+        y-codes = <INPUT_REL_Y>;
     };
 
     macros {
@@ -53,8 +56,6 @@
     ibp_scrl: ibp_scrl {
             compatible = "zmk,behavior-input-two-ints";
             #binding-cells = <2>;
-            // パス指定 &{/...} ではなく、直接ラベルを指定します。
-            // 以前追加した「ダミー定義」があるため、これでエラーになりません。
             bindings = <&mouse_runtime_input_processor_central>;
         };
     };
