@@ -48,7 +48,8 @@
     ibp_scrl: ibp_scrl {
             compatible = "zmk,behavior-input-two-ints";
             #binding-cells = <2>;
-            bindings = <&scroll_runtime_input_processor>;
+            // ラベル名ではなく、パスで指定することでSnippetに依存せずビルドを通します
+            bindings = <&{/mouse_runtime_input_processor_central}>;
         };
     };
 
