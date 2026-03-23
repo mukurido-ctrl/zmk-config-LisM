@@ -21,6 +21,7 @@
     mouse_runtime_input_processor_central: mouse_runtime_input_processor_central {
         compatible = "zmk,input-processor-runtime";
         #input-processor-cells = <0>;
+        #binding-cells = <2>;   /* これを追加！ */
         processor-label = "mouse";
         type = <INPUT_EV_REL>;
         x-codes = <INPUT_REL_X>;
