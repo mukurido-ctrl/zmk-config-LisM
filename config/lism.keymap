@@ -48,7 +48,7 @@
     ibn: input_behavior_node {
             compatible = "zmk,behavior-input-two-ints";
             #binding-cells = <2>;
-            bindings = <&input_processor_num>;
+            bindings = <&ibp>;
         };
     };
 
@@ -110,10 +110,10 @@
         layer_5 {
             display-name = "Scroll Layer";
             bindings = <
-                &trans           &trans             &trans                &trans                  &trans                                                 &trans       &trans           &trans             &trans              &ibn 0 0
+                &trans           &trans             &trans                &trans                  &trans                                                 &trans       &trans           &trans             &trans              &ibp 0 0
                 &trans           &trans             &trans                &trans                  &trans                                                 &trans       &trans           &trans             &trans              &trans
                 &trans           &trans             &trans                &trans                  &trans                                                 &trans       &trans           &trans             &trans              &trans
-                &trans           &trans             &trans                &trans                  &trans            &ibn 0 0             &trans           &trans       &trans           &trans             &trans              &trans
+                &trans           &trans             &trans                &trans                  &trans            &ibp 0 0             &trans           &trans       &trans           &trans             &trans              &trans
             >;
             sensor-bindings = <&rsr_scrl &rsr_scrl>;
         };
