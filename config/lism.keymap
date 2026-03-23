@@ -18,6 +18,12 @@
 
 
 / {
+    /* ここから追記：トラックボールがない側のビルドでエラーを防ぐためのダミー定義 */
+    mouse_runtime_input_processor_central: mouse_runtime_input_processor_central {
+        #input-processor-cells = <0>;
+    };
+    /* ここまで追記 */
+
     macros {
         emoji: emoji_macro {
             compatible = "zmk,behavior-macro";
