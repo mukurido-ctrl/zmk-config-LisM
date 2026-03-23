@@ -45,10 +45,10 @@
             ccw-binding = <&msc SCRL_UP>;
         };
 
-    ibn: input_behavior_node {
+    ibp_mouse: ibp_mouse {
             compatible = "zmk,behavior-input-two-ints";
             #binding-cells = <2>;
-            bindings = <&ibp>;
+            bindings = <&mouse_runtime_input_processor_central>;
         };
     };
 
@@ -110,10 +110,10 @@
         layer_5 {
             display-name = "Scroll Layer";
             bindings = <
-                &trans           &trans             &trans                &trans                  &trans                                                 &trans       &trans           &trans             &trans              &ibp 0 0
+                &trans           &trans             &trans                &trans                  &trans                                                 &trans       &trans           &trans             &trans              &ibp_mouse 1 1
                 &trans           &trans             &trans                &trans                  &trans                                                 &trans       &trans           &trans             &trans              &trans
                 &trans           &trans             &trans                &trans                  &trans                                                 &trans       &trans           &trans             &trans              &trans
-                &trans           &trans             &trans                &trans                  &trans            &ibp 0 0             &trans           &trans       &trans           &trans             &trans              &trans
+                &trans           &trans             &trans                &trans                  &trans            &ibp_mouse 1 1             &trans           &trans       &trans           &trans             &trans              &trans
             >;
             sensor-bindings = <&rsr_scrl &rsr_scrl>;
         };
