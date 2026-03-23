@@ -18,11 +18,10 @@
 
 
 / {
-    /* ここから追記：トラックボールがない側のビルドでエラーを防ぐためのダミー定義 */
     mouse_runtime_input_processor_central: mouse_runtime_input_processor_central {
+        compatible = "zmk,input-processor-runtime"; // これを追加
         #input-processor-cells = <0>;
     };
-    /* ここまで追記 */
 
     macros {
         emoji: emoji_macro {
@@ -54,8 +53,9 @@
     ibp_scrl: ibp_scrl {
             compatible = "zmk,behavior-input-two-ints";
             #binding-cells = <2>;
-            // ラベル名ではなく、パスで指定することでSnippetに依存せずビルドを通します
-            bindings = <&{/mouse_runtime_input_processor_central}>;
+            // パス指定 &{/...} ではなく、直接ラベルを指定します。
+            // 以前追加した「ダミー定義」があるため、これでエラーになりません。
+            bindings = <&mouse_runtime_input_processor_central>;
         };
     };
 
