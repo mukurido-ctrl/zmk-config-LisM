@@ -18,7 +18,7 @@
 
 
 / {
-    ibp_scrl: ibp_scrl_dummy {
+    mouse_runtime_input_processor_central: mouse_runtime_input_processor_central {
         compatible = "zmk,behavior-hold-tap";
         #binding-cells = <2>;
         flavor = "tap-preferred";
