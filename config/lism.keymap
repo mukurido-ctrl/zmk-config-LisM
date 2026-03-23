@@ -57,6 +57,8 @@
     ibp_scrl: ibp_scrl {
             compatible = "zmk,behavior-input-two-ints";
             #binding-cells = <2>;
+            // マウスプロセッサが存在する場合のみ有効なラベルを指定
+            // Snippet側で定義されているはずのラベルを直接書きます
             bindings = <&mouse_runtime_input_processor_central>;
         };
     };
