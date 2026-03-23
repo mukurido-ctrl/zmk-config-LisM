@@ -102,13 +102,12 @@
         };
 
         layer_5 {
-            status = "reserved";
-            display-name = "Brank Layer";
+            display-name = "Scroll Layer";
             bindings = <
+                &trans           &trans             &trans                &trans                  &trans                                                 &trans       &trans           &trans             &trans              &zip SCRL_MODE
                 &trans           &trans             &trans                &trans                  &trans                                                 &trans       &trans           &trans             &trans              &trans
                 &trans           &trans             &trans                &trans                  &trans                                                 &trans       &trans           &trans             &trans              &trans
-                &trans           &trans             &trans                &trans                  &trans                                                 &trans       &trans           &trans             &trans              &trans
-                &trans           &trans             &trans                &trans                  &trans            &trans              &trans           &trans       &trans           &trans             &trans              &trans
+                &trans           &trans             &trans                &trans                  &trans            &zip SCRL_MODE              &trans           &trans       &trans           &trans             &trans              &trans
             >;
         };
 
