@@ -125,10 +125,10 @@
         layer_5 {
             display-name = "pointing Layer";
             bindings = <
-                &trans           &trans             &trans                &trans                  &trans                                                 &trans       &trans           &trans             &trans              &{/mouse_runtime_input_processor_central} 1 1
                 &trans           &trans             &trans                &trans                  &trans                                                 &trans       &trans           &trans             &trans              &trans
                 &trans           &trans             &trans                &trans                  &trans                                                 &trans       &trans           &trans             &trans              &trans
-                &trans           &trans             &trans                &trans                  &trans            &{/mouse_runtime_input_processor_central} 1 1             &trans           &trans       &trans           &trans             &trans              &trans
+                &trans           &trans             &trans                &trans                  &trans                                                 &trans       &trans           &trans             &trans              &trans
+                &trans           &trans             &trans                &trans                  &trans            &trans              &trans           &trans       &trans           &trans             &trans              &trans
             >;
             sensor-bindings = <&rsr_scrl &rsr_scrl>;
         };
